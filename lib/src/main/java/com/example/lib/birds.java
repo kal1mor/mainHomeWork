@@ -1,8 +1,6 @@
 package com.example.lib;
 
 public class birds {
-    int speedFly;
-    String colorOfBird;
 
     public static void main(String[] args) {
         Crow crow = new Crow();
@@ -12,17 +10,11 @@ public class birds {
         crow.fly();
         crow.setColorOfBird();
     }
-    void fly() {
-        System.out.println("My speed equal: " + speedFly + "km/h");
-    }
 
-    void setColorOfBird() {
-        System.out.println("My color is: " + colorOfBird);
-    }
 
 }
 
-class Crow extends birds{
+class Crow extends Bird{
 
     @Override
     void fly() {
@@ -38,7 +30,7 @@ class Crow extends birds{
     }
 }
 
-class Pigeon extends birds{
+class Pigeon extends Bird{
 
     @Override
     void fly() {
@@ -52,4 +44,19 @@ class Pigeon extends birds{
         colorOfBird = "white";
         super.setColorOfBird();
     }
+}
+
+    abstract class Bird {
+
+        int speedFly;
+        String colorOfBird;
+
+        void fly() {
+            System.out.println("My speed equal: " + speedFly + "km/h");
+        }
+
+        void setColorOfBird() {
+            System.out.println("My color is: " + colorOfBird);
+        }
+
 }
