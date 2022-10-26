@@ -2,6 +2,7 @@ package com.example.homework12;
 
 import java.util.ArrayList;
 import java.util.Comparator;
+import java.util.Optional;
 
 public class Homework12 {
     public static void main(String[] args) {
@@ -17,7 +18,7 @@ public class Homework12 {
         adultList.add(new Adult(20, "John", 169));
         adultList.add(new Adult(23, "Wick", 174));
         adultList.add(new Adult(70, "Antony", 125));
-        String mostOldest = adultList.stream().skip(1).limit(2).max(Comparator.comparing(Adult::getAge)).get().getName();
+        String mostOldest = adultList.stream().skip(1).limit(2).max(Comparator.comparing(Adult::getAge)).get().getName() + " " + adult.getAge() + " " + adult.getGrowth();
         System.out.print(mostOldest);
     }
 }
