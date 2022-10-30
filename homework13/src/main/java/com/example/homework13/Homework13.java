@@ -9,6 +9,9 @@ public class Homework13 {
         ImplThread implThread = new ImplThread();
         Thread thread = new Thread(implThread);
         thread.start();
+        try {
+            thread.join();
+        }catch (Exception e){}
 
         Thread thread1 = new Thread(){
             @Override
